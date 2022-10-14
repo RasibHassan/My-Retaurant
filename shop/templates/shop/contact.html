@@ -1,0 +1,72 @@
+
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact us {% endblock %}
+
+{% block body %}
+  <div class="container ">
+    <h3 class="text-success mt-2 text-center" style='font-family: "Permanent Marker", sans-serif'>Contact Us</h3>
+    <hr class="border border-success border-1 opacity-50">
+    <form class="needs-validation" action="/shop/contact/" method="POST" novalidate>{% csrf_token %}
+      <div class="form-group ">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+        <div class="invalid-feedback">
+          Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required="true">
+        <div class="invalid-feedback">
+          Email is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required="true">
+        <div class="invalid-feedback">
+          Phone no is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="desc">How May We Help You ?</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+        <div class="invalid-feedback">
+          Enter your query
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-success my-2">Submit</button>
+    </form>
+  </div>
+<br>
+<br>
+<div class="container text-center">
+  <h3 class="text-success mt-2" style='font-family: "Permanent Marker", sans-serif'>Contact Us On Whatsapp</h3>
+  <hr class="border border-success border-1 opacity-50">
+  <a class="btn btn-success ms-2" href=" https://wa.me/923170201589"><i class="fa-brands fa-whatsapp"></i>  +923170201589</a>
+</div>
+<script>
+  var elem = document.getElementById('disable');
+elem.parentNode.removeChild(elem);
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+{% endblock %}

@@ -1,0 +1,104 @@
+
+
+
+<style>
+  @media (max-width: 790px) {  
+  .container{
+    text-align: center;
+    width: 100%!important;
+    justify-content: center!important;
+    margin:auto;
+    align-items:center
+  }
+  p{
+    margin-right: 30px !important;
+    margin-left: 30px !important;
+    font-size: smaller;
+
+  }
+  hr{
+    width: 200px;
+    margin: auto !important;
+  }
+  
+
+  img{
+    float: none!important;
+  }
+  .col-md-6{
+    margin-left: 0!important;
+  }
+  .check{
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
+
+
+
+
+</style>
+{% extends 'shop/basic.html' %}
+{% load static %}
+
+{% block title%} About us {% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row  mt-4">
+    <div class="col-md-6 mt-4 text-center ">
+      <img class="img-fluid " src="{% static 'shop/burger.png' %}" width="300" >
+    </div>
+    <div class="col-md-6 mt-4 check" style="padding: 100px 0 ; ">
+      <h1 class="fst-italic text-success" style='font-family: "Permanent Marker", sans-serif'>
+        My Restaurant
+      </h1>
+      <hr class="text-success mb-3" width="45%">
+
+      <p style="font-family: 'Arvo', serif; margin-right: 65px">
+        A restaurant depicting the legendary grandeur of splendid and noble past. A vivid and conspicuous realization of the glory of our brilliant esthetical essence. All the way a combination and innovation. Adorned with courtesy of mughlai era we offer you to dine out authentic Mughlai , Tandori , Live Bar-B-Que & Traditional Pakistani cuisine Our menu highlights things that utilization the sound and fragrant flavors, however, forgets the stuffing ghee, spread, oil, and overwhelming cream.
+      </p>
+    </div>
+    
+
+  </div>
+
+    <div class="row border border-success check" >
+      <div class="col-md-6 " style="padding: 50px 0 ;margin-left:20px;">
+          <h2 class="text-success" style='font-family: "Permanent Marker", sans-serif; ' >OUR MISSION</h2>
+          <hr class="text-success mb-3" width="40%">
+          <p style="font-family: 'Arvo', serif;">Our mission is to provide quality food to our valuable customer.A great menu can be transformed into an unbelievable one simply by upgrading your ingredients.</p>
+        </div>
+      <div class="col-md-5" >
+          <img src="{% static 'shop/mission.jpg' %}" class="rounded img-fluid shadow-sm mt-3" alt="..." width="400" style="float: right;">
+      </div>
+    </div>
+
+    <div class="row mt-4 border border-success check">
+        <div class="col-md-5 t">
+          <img src="{% static 'shop/delivery.jpg' %}" class="rounded float img-fluid shadow-sm" alt="..." width="400">
+        </div>
+        <div class="col-md-7" style="padding: 60px 0 ;">
+          <h2 class="text-success" style='font-family: "Permanent Marker", sans-serif;' >Fast Delivery</h2>
+          <hr class="text-success mb-3" width="40%">
+          <p style="font-family: 'Arvo', serif;">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        </div>
+    </div>
+
+      <hr >
+  <img src="{% static 'shop/copy.webp' %}" class="img-fluid text-center" alt="..." >
+  <hr class="mb-4">
+</div>
+  <div class="container text-center mt-3">
+    <h3 class="mb-2 text-success" style='font-family: "Permanent Marker", sans-serif';> Our Team</h3>
+    <img class="rounded-circle z-depth-2 mt-5 shadow-lg border border-success" alt="100x100" src="{% static 'shop/dev2.png' %}" data-holder-rendered="true" width="200" > 
+    <h5 class="mt-2" style="font-family: Arial, Helvetica, sans-serif;"><b> Rasib Hassan </b></h5>
+    <h6>Developer</h6>
+  </div>
+
+  <script>
+    var elem = document.getElementById('disable');
+  elem.parentNode.removeChild(elem);
+  </script>
+</section>
+  {% endblock %}

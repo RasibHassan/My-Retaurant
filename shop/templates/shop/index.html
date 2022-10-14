@@ -1,0 +1,134 @@
+<style>
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+@media (max-width: 786px) {  
+  .container{
+    width: 400px!important;
+    border-color: black;
+  }
+  .small{
+    font-size: 1px;
+  }
+
+}
+@media (max-width: 430px) {  
+  .container{
+    width: 300px!important;
+    border-color: black;
+  }
+
+
+}
+
+
+</style>
+
+
+{% extends 'shop/basic.html' %}
+
+{% block title%} Resturant {% endblock %}
+
+{% block body %}
+{% load static %}
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="{% static 'shop/myban2.jpg' %}" class="d-block w-100 cheight" alt="...">
+
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="{% static 'shop/myban2.jpg' %}" class="d-block w-100" alt="...">
+
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="{% static 'shop/my ban3.jpg' %}" class="d-block w-100" alt="...">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<br>
+<div class="container border border-success pd-5">
+  <div class="row">
+    <div class="col-md-5 mt-4 text-center">
+      <img class="img-fluid" src="{% static 'shop/front.png' %}" width="300" >
+    </div>
+    <div class="col-md-7 mt-4 text-center" style="padding: 100px 0 ;">
+      <h1 id="blink" class="fst-italic text-success " style='font-family: "Permanent Marker", sans-serif;animation: blink 3s linear infinite;'>
+        20% OFF
+      </h1>
+      <p style="font-family: 'Arvo', serif; margin-left: 65px; margin-right: 65px;">
+        A reduced-price set menu, featuring a mix of top performers and dishes that need a boost. Our resturant giving 20% off for this weekend avail this offer order now !
+      </p>
+      <a class="btn btn-outline-success shadow-sm " href="/shop/menu">ORDER NOW</a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+    <div class="container mt-4 pd-5">
+      <div class="text-success text-center">
+        <h2 style='font-family: "Permanent Marker", sans-serif' >Choose Best Category</h2>
+        <h6>Enjoy meal with your friends and family</h6>
+        <hr>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col mx-auto">
+          <div class="card border border-success">
+            <img src="{% static 'shop/fastfood new.png' %}" class="card-img-top img-fluid" alt="..." height="350">
+            <div class="card-body text-center">
+              <hr class="text-success">
+              <h3 class="card-title text-center " style='font-family: "Permanent Marker", sans-serif; color: rgb(16, 157, 13)'>Fast Food</h3>
+              <p class="card-text text-center small">We are providing quality Fast food in town.Check out our amazing Fast food variety.order now your favorite FAST FOOD from MY retuarant & enjoy your day. </p>
+              <a href="/shop/menu"><button class="btn btn-outline-success" >Explore Menu</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col mx-auto">
+          <div class="card border border-success">
+            <img src="{% static 'shop/bbq new.png' %}" class="card-img-top img-fluid" alt="..." height="350">
+            <div class="card-body text-center">
+              <hr class="text-success">
+              <h3 class="card-title text-center " style='font-family: "Permanent Marker", sans-serif; color: rgb(16, 157, 13)'>BBQ</h3>
+              <p class="card-text text-center small">We are providing quality Fast food in town.Check out our amazing BBQ variety.order now your favorite BBQ from MY retuarant & enjoy your day and have fun</p>
+              <a href="/shop/menu"><button class="btn btn-outline-success" >Explore Menu</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col mx-auto">
+          <div class="card border border-success">
+            <img src="{% static 'shop/drink new.png' %}" class="card-img-top img-fluid" alt="..." height="350">
+            <div class="card-body text-center">
+              <hr class="text-success">
+              <h3 class="card-title text-center " style='font-family: "Permanent Marker", sans-serif; color: rgb(16, 157, 13)'>DRINKS</h3>
+              <p class="card-text text-center small">Quickly order now your favorite drink with our meal to improved satiety, order now your favorite Drink from MY retuarant & enjoy your day and have fun </p>
+              <a href="/shop/menu"><button class="btn btn-outline-success" >Explore Menu</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+<script>
+  var elem = document.getElementById('disable');
+elem.parentNode.removeChild(elem);
+</script>
+{% endblock %}
+      

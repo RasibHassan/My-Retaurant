@@ -39,6 +39,9 @@ def Contact(request):
         desc=request.POST.get('desc', '')
         contacts = contact(name=name, email=email, phone=phone, desc=desc)
         contacts.save()
+        thank = 'true'
+        return render(request, 'shop/contact.html', {'thank':thank,})
+
     return render(request, "shop/contact.html")
 
 

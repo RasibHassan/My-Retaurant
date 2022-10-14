@@ -7,7 +7,7 @@
   <div class="container ">
     <h3 class="text-success mt-2 text-center" style='font-family: "Permanent Marker", sans-serif'>Contact Us</h3>
     <hr class="border border-success border-1 opacity-50">
-    <form class="needs-validation" action="/shop/contact/" method="POST" novalidate>{% csrf_token %}
+    <form class="needs-validation" action="/contact/" method="POST"  novalidate>{% csrf_token %}
       <div class="form-group ">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
@@ -24,7 +24,7 @@
       </div>
       <div class="form-group">
         <label for="name">Phone</label>
-        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required="true">
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required="true">
         <div class="invalid-feedback">
           Phone no is required
         </div>
@@ -36,7 +36,7 @@
           Enter your query
         </div>
       </div>
-      <button type="submit" class="btn btn-outline-success my-2">Submit</button>
+      <button type="submit" class="btn btn-outline-success my-2" >Submit</button>
     </form>
   </div>
 <br>
@@ -45,6 +45,26 @@
   <h3 class="text-success mt-2" style='font-family: "Permanent Marker", sans-serif'>Contact Us On Whatsapp</h3>
   <hr class="border border-success border-1 opacity-50">
   <a class="btn btn-success ms-2" href=" https://wa.me/923170201589"><i class="fa-brands fa-whatsapp"></i>  +923170201589</a>
+</div>
+<div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content border border-success">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center text-success" id="staticBackdropLabel"><i class='fa-solid fa-check'></i> MESSAGE SENT ! </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Thank You !</h4>
+          <p>Your query has been sent successfuly. our representative will answer your query as soon as possible </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="/"><button type="button" class="btn btn-success">BACK TO HOME</button></a>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   var elem = document.getElementById('disable');
@@ -66,7 +86,13 @@ elem.parentNode.removeChild(elem);
 
       form.classList.add('was-validated')
     }, false)
-  })
+    })
+
 })()
+'{% if thank %}'
+var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop3'))
+myModal.show()
+'{% endif %}'
+
 </script>
 {% endblock %}

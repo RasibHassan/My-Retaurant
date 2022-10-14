@@ -12,7 +12,7 @@
     </ul>
     <h3 class="text-success mt-4">Step 2 - Enter Address & Other Details:</h3>
     <hr class="border border-success border-1 opacity-50">
-    <form class="row g-3 needs-validation" method="post" action="/shop/checkout/" novalidate>{% csrf_token %}
+    <form class="row g-3 needs-validation" method="post" action="/checkout/" novalidate>{% csrf_token %}
         <input type="hidden" name="itemsJson" id="itemsJson">
         <div class="col-md-6">
           <label for="inputname" class="form-label">Name</label>
@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-6">
           <label for="inputemail" class="form-label">Email</label>
-          <input type="text" class="form-control" id="email" name="email" required="true" >
+          <input type="email" class="form-control" id="email" name="email" required="true" >
           <div class="invalid-feedback">
             Email is required
           </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">Phone no</label>
-          <input type="text" class="form-control" id="phone" name="phone" required="true">
+          <input type="number" class="form-control" id="phone" name="phone" required="true">
           <div class="invalid-feedback">
             Phone no is required
           </div>
@@ -85,7 +85,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refresh()">Close</button>
-        <a href="/shop"><button type="button" class="btn btn-success">BACK TO HOME</button></a>
+        <a href="/"><button type="button" class="btn btn-success">BACK TO HOME</button></a>
       </div>
     </div>
   </div>
